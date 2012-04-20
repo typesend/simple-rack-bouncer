@@ -1,0 +1,1 @@
+require 'rack/simple_rack_bouncer'
