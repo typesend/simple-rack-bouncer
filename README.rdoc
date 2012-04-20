@@ -15,7 +15,10 @@ For instance, to add this middleware to your Rails app:
   gem 'simple-rack-bouncer'
 
   # Add the middleware to the stack and configure it
-  config.middleware.add Rack::SimpleRackBouncer, :deny_ip_address => ["1.2.3.4", /^10\.0\./], :deny_user_agent => /msnbot/
+  config.middleware.add Rack::SimpleRackBouncer,
+      :deny_ip_address => ["1.2.3.4", /^10\.0\./],
+      :deny_user_agent => /msnbot/,
+      :redirect => 'http://www.youtube.com/watch?v=RfiQYRn7fBg'
 
 The black list can be either a single or an array with a combination of strings, regular expressions and Proc objects.
 If any of the given conditions are met, the client will be greeted with an HTTP 403 response (access denied).
