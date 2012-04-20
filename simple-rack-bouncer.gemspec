@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'simple-rack-bouncer'
-  s.version = '0.0.5'
+  s.version = '0.0.6'
   s.date    = '2012-04-14'
   
   s.summary = "Simple rack middleware for access filtering by IP address or User Agent string"
