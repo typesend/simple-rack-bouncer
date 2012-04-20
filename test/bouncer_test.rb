@@ -19,7 +19,7 @@ class BouncerTest < Test::Unit::TestCase
   
   def setup
     @app = App.new
-    @bouncer = Bouncer.new(@app)
+    @bouncer = SimpleRackBouncer.new(@app)
   end
   
   def test_default_options

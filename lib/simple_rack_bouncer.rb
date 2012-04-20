@@ -1,5 +1,4 @@
-
-class Bouncer
+class SimpleRackBouncer
 
   # See configure for available options
   def initialize(app, options = {})
