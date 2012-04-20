@@ -13,6 +13,7 @@ module Rack
     def configure(options = {})
       @user_agent_checks = [options[:deny_user_agent]].flatten.compact
       @ip_address_checks = [options[:deny_ip_address]].flatten.compact
+      @redirect_url = [options[:redirect]].flatten.compact
     end
   
     def call(env)
@@ -73,7 +74,12 @@ module Rack
     protected
   
     def deny_access
+      return deny_access_via_redirect if @redirect_url
       [403, {"Content-Type" => "text/html"}, ["<h1>403 Forbidden</h1>"]]
+    end
+    
+    def deny_access_via_redirect
+      [301, {"Location" => @redirect_url}, ["<h1>403 Forbidden</h1>"]]
     end
  
   end
