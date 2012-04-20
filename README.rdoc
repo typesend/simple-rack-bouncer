@@ -1,4 +1,4 @@
-= Bouncer
+= Simple Rack Bouncer
 
 A simple blacklist based access filtering middleware for Rack.  
 
